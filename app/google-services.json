@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "533691057343",
+    "project_id": "biodatayudha",
+    "storage_bucket": "biodatayudha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533691057343:android:bbf701143432d1f8b4320a",
+        "android_client_info": {
+          "package_name": "com.example.biodatayudha"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1h892hQvHQDyuto2veTHuXL1ON2vulBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
