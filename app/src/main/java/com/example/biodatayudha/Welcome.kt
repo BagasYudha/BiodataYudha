@@ -14,7 +14,6 @@ class Welcome : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
         Handler().postDelayed({
-            // Setelah waktu splash screen habis, buka MainActivity
             startActivity(Intent(this, MainActivity::class.java))
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             finish()

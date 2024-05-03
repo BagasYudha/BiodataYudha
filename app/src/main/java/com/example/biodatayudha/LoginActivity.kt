@@ -3,64 +3,66 @@ package com.example.biodatayudha
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Toast
 import com.example.biodatayudha.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityLoginBinding
+    lateinit var binding : ActivityLoginBinding
     lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.btnToRegister.setOnClickListener{
+        auth = FirebaseAuth.getInstance()
+
+
+        binding.btnToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnLogin.setOnClickListener{
-            val username = binding.txtUsername.text.toString()
-            val password = binding.txtUsername.text.toString()
+        binding.btnLogin.setOnClickListener {
+            val email = binding.txtUsername.text.toString()
+            val password = binding.txtPassword.text.toString()
 
-            if(username.isEmpty()){
-                binding.txtUsername.error = "Usernamenya isi dulu bang!"
+            //Validasi email
+            if (email.isEmpty()){
+                binding.txtUsername.error = "Email Harus Diisi"
                 binding.txtUsername.requestFocus()
                 return@setOnClickListener
             }
 
-            if(username.length < 5){
-                binding.txtUsername.error = "Username minimal 6 karakter"
-                binding.txtUsername.requestFocus()
+            //Validasi email tidak sesuai
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.txtPassword.error = "Email Tidak Valid"
+                binding.txtPassword.requestFocus()
                 return@setOnClickListener
             }
 
-            if(password.isEmpty()){
-                binding.txtUsername.error = "Passwordnya gaada bang?!"
-                binding.txtUsername.requestFocus()
+            //Validasi password
+            if (password.isEmpty()){
+                binding.txtPassword.error = "Password Harus Diisi"
+                binding.txtPassword.requestFocus()
                 return@setOnClickListener
             }
 
-            if(password.length < 8){
-                binding.txtUsername.error = "Passwordnya minimal 8 karakter"
-                binding.txtUsername.requestFocus()
-                return@setOnClickListener
-            }
-
-            RegisterFirebase(username,password)
+            LoginFirebase(email,password)
         }
     }
 
-    private fun RegisterFirebase(username: String, password: String) {
-        auth.createUserWithEmailAndPassword(username, password)
+    private fun LoginFirebase(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     val intent = Intent(this, Welcome::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "$ { it.exception?.message }", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
     }

@@ -89,6 +89,7 @@
                 android:id="@+id/btnLogin"
                 android:fontFamily="@font/montserrat_bold"
                 android:backgroundTint="@color/black"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"

@@ -9,8 +9,8 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityRegisterBinding
-    lateinit var auth : FirebaseAuth
+    private lateinit var binding: ActivityRegisterBinding
+    private lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -27,16 +27,16 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener{
-            val username = binding.txtUsername.text.toString()
+            val email = binding.txtUsername.text.toString()
             val password = binding.txtUsername.text.toString()
 
-            if(username.isEmpty()){
+            if(email.isEmpty()){
                 binding.txtUsername.error = "Usernamenya isi dulu bang!"
                 binding.txtUsername.requestFocus()
                 return@setOnClickListener
             }
 
-            if(username.length < 5){
+            if(email.length < 5){
                 binding.txtUsername.error = "Username minimal 6 karakter"
                 binding.txtUsername.requestFocus()
                 return@setOnClickListener
@@ -53,20 +53,19 @@ class RegisterActivity : AppCompatActivity() {
                 binding.txtUsername.requestFocus()
                 return@setOnClickListener
             }
-
-            RegisterFirebase(username,password)
-
+            registerFirebase(email,password)
         }
     }
 
-    private fun RegisterFirebase(username: String, password: String) {
+    private fun registerFirebase(username: String, password: String) {
         auth.createUserWithEmailAndPassword(username,password)
             .addOnCompleteListener(this){
                 if (it.isSuccessful){
                     Toast.makeText(this, "Register Berhasil", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
                 }else{
-                    Toast.makeText(this, "$ { it.exception?.message }", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
             }
         }
 
