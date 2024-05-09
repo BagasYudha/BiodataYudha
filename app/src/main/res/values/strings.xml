@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">BiodataYudha</string>
     <string name="biodatayudha">BiodataYudha.</string>
+    <string name="deskripsi_long">Nama saya Bagas Yudha Ardiansyah. Saya lulusan SMK PGRI 1 Ngawi dan fokus ke Audio Visual dan juga Desain Grafis. Setelah lulus, saya memutuskan untuk melanjutkan di Program Studi Teknologi Informasi di Politeknik Negeri Madiun yang saat ini duduk di bangku semester 2. Aplikasi ini saya buat untuk memenuhi tugas mata kuliah Praktik Pemrograman Mobile. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mollis, eros ut finibus blandit, ex mauris dictum magna, eleifend vestibulum nisl urna et felis. Vestibulum eu enim quis risus tristique mollis et in nisi. Integer cursus eu dui nec lacinia. Donec consequat nibh ut turpis auctor vehicula. Duis at euismod orci. Morbi quis sapien posuere, convallis lorem ac, euismod ante. Cras varius egestas lorem, a luctus nunc pharetra non. Nam justo leo, finibus consectetur velit ut, fringilla varius nulla. Nullam vehicula, risus non venenatis viverra, nisi mi suscipit ligula, eget malesuada lectus lorem nec diam. Phasellus ornare dictum erat sit amet iaculis.</string>
+    <string name="deskripsi_diri">DESKRIPSI DIRI</string>
+    <string name="nim_num">233307095</string>
+    <string name="buka_github">Buka Github</string>
+    <string name="tampilkan_deskripsi">Tampilkan Deskripsi</string>
+    <string name="nim">NIM</string>
+    <string name="nama">NAMA</string>
+    <string name="nama_saya">Bagas Yudha Ardiansyah</string>
+    <string name="foto_saya">Foto Saya</string>
 </resources>
