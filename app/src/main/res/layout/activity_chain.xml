@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chain">
+
+    <!-- Guideline Vertical -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineYL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <!-- Guideline Horizontal -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineXT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <!-- Guideline Vertical -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineYR"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <!-- Guideline Horizontal -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineXB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/linearL"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/buttonHide"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineXB"
+        app:layout_constraintTop_toTopOf="@id/guidelineXT"
+        app:layout_constraintStart_toStartOf="@id/guidelineYL" />
+
+    <Button
+        android:id="@+id/buttonHide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide Button"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineYR"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineXB"
+        app:layout_constraintTop_toTopOf="@id/guidelineXT"
+        app:layout_constraintStart_toStartOf="@id/guidelineYL" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
