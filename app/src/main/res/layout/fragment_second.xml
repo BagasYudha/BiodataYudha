@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SecondFragment">
+
+
+        <!-- Guideline Vertical Left-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineYL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            />
+
+        <!-- Guideline Horizontal Top -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineXT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+     />
+
+        <!-- Guideline Vertical Right -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineYR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+          />
+
+        <!-- Guideline Horizontal Bottom-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineXB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+ />
+
+        <!-- TextView Untuk Menampilkan Header Kategori Berita-->
+        <TextView
+            android:id="@+id/tvHeaderSecondPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Trending Hari Ini"
+            android:textSize="32sp"
+            android:textStyle="bold"
+>
+
+        </TextView>
+
+        <!-- CardView Untuk Membungkus -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvGroup"
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+          >
+
+            <!-- CardView Untuk Membentuk Image Agar Memiliki Corner Radius-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvGambar"
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                android:backgroundTint="@color/white"
+              >
+
+                <ImageView
+                    android:id="@+id/ivBerita"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/syl">
+
+                </ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvJudulBerita"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginRight="16dp"
+                android:lineSpacingExtra="4sp"
+                android:text="CONTOH JUDUL BERITA YANG AKAN DITAMPILKAN MENGGUNAKAN RECYLCE VIEW"
+                android:textAlignment="textStart"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+</FrameLayout>

@@ -10,4 +10,6 @@
     <string name="nama">NAMA</string>
     <string name="nama_saya">Bagas Yudha Ardiansyah</string>
     <string name="foto_saya">Foto Saya</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
